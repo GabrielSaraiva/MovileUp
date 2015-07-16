@@ -14,7 +14,7 @@
 		81ABB77F1B56D384005D0596 /* Main.storyboard in Sources */ = {isa = PBXBuildFile; fileRef = 81ABB7811B56D384005D0596 /* Main.storyboard */; };
 		81ABB7831B56E908005D0596 /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81ABB7821B56E908005D0596 /* CustomNavigationController.swift */; };
 		81F55F271B582AE0007B9698 /* EpisodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F55F261B582AE0007B9698 /* EpisodeViewController.swift */; };
-		81F55F2B1B58341B007B9698 /* SeasonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F55F2A1B58341B007B9698 /* SeasonViewController.swift */; };
+		81F55F2D1B5850BB007B9698 /* SeasonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F55F2C1B5850BB007B9698 /* SeasonViewController.swift */; };
 		8364121018C2A0017FDFCEA8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B18C3328CD29A0A94B99A03 /* Foundation.framework */; };
 		912D74E0DEA949529993B317 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A114B3EE725401D176BC7C48 /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
@@ -40,7 +40,7 @@
 		81ABB7801B56D384005D0596 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/Main.storyboard; sourceTree = "<group>"; };
 		81ABB7821B56E908005D0596 /* CustomNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
 		81F55F261B582AE0007B9698 /* EpisodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EpisodeViewController.swift; sourceTree = "<group>"; };
-		81F55F2A1B58341B007B9698 /* SeasonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SeasonViewController.swift; path = ../Resources/Storyboards/SeasonViewController.swift; sourceTree = "<group>"; };
+		81F55F2C1B5850BB007B9698 /* SeasonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeasonViewController.swift; sourceTree = "<group>"; };
 		A114B3EE725401D176BC7C48 /* AppDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AD3C5AC98846734D454443D9 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D71D5233B1CEEC9ED7F75AF8 /* Movile-UP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Movile-UP.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -224,9 +224,9 @@
 		EFF3AD74F7606287B373A893 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				81F55F2C1B5850BB007B9698 /* SeasonViewController.swift */,
 				81ABB7821B56E908005D0596 /* CustomNavigationController.swift */,
 				81F55F261B582AE0007B9698 /* EpisodeViewController.swift */,
-				81F55F2A1B58341B007B9698 /* SeasonViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -440,7 +440,7 @@
 				912D74E0DEA949529993B317 /* AppDelegate.swift in Sources */,
 				81ABB7831B56E908005D0596 /* CustomNavigationController.swift in Sources */,
 				148B0E23B2BDD5426321A7D2 /* Storyboards.swift in Sources */,
-				81F55F2B1B58341B007B9698 /* SeasonViewController.swift in Sources */,
+				81F55F2D1B5850BB007B9698 /* SeasonViewController.swift in Sources */,
 				81F55F271B582AE0007B9698 /* EpisodeViewController.swift in Sources */,
 				81ABB77F1B56D384005D0596 /* Main.storyboard in Sources */,
 				5654F7E1752DD18B4A567389 /* LaunchScreen.xib in Sources */,
