@@ -6,8 +6,24 @@
 //  Copyright (c) 2015 Movile. All rights reserved.
 //
 
-import Cocoa
+import UIKit
 
-class CustomViewController: UIViewController {
-
+class EpisodeViewController: UIViewController {
+    
+    
+    @IBOutlet private weak var episodeImageView: UIImageView!
+    
+    @IBOutlet private weak var titleLabel: UILabel!
+    
+    @IBOutlet private weak var overviewLabel: UILabel!
+    
+    @IBOutlet private weak var overviewTextView: UITextView!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        overviewTextView.textContainer.lineFragmentPadding = 0
+        overviewTextView.textContainerInset = UIEdgeInsetsZero
+    }
+    
 }

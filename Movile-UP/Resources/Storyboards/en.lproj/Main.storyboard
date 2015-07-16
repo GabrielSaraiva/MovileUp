@@ -1,7 +1,165 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6249" systemVersion="14A379a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vQR-8u-Fuu">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6243"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
-    <scenes/>
+    <scenes>
+        <!--Episode 12-->
+        <scene sceneID="3Qt-ka-R8a">
+            <objects>
+                <viewController id="aok-XI-pUv" customClass="EpisodeViewController" customModule="Movile_UP" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="SvS-YL-nVh"/>
+                        <viewControllerLayoutGuide type="bottom" id="kJ9-Vu-Ndv"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="mp3-Ws-Bno">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="SFG-n1-TFh">
+                                <rect key="frame" x="0.0" y="20" width="600" height="200.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="kmC-18-Z0J"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The adventures of Ragnar Lothbrok: the greatest hero" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LTT-Nw-bh3">
+                                <rect key="frame" x="13" y="160" width="574" height="46"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="18"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OVERVIEW" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J5L-CX-fR5">
+                                <rect key="frame" x="16" y="379" width="335" height="13"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="11"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rGh-hR-U8G">
+                                <rect key="frame" x="13" y="400" width="574" height="192"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">The adventures of Ragnar Lothbrok: the greatest hero of his age. The series tells the saga of Ragnar's band of Viking brothers and his family as he rises to become King of the Viking tribes.
+As well as being a fearless warrior, Ragnar embodies the Norse traditions of devotion to the gods: legend has it that he was a direct descendant of Odin, the god of war and warriors.</string>
+                                <color key="textColor" name="controlDarkShadowColor" catalog="System" colorSpace="catalog"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="J5L-CX-fR5" firstAttribute="leading" secondItem="mp3-Ws-Bno" secondAttribute="leadingMargin" id="3rr-E4-6ZR"/>
+                            <constraint firstItem="rGh-hR-U8G" firstAttribute="leading" secondItem="mp3-Ws-Bno" secondAttribute="leading" constant="13" id="49v-07-tih"/>
+                            <constraint firstItem="LTT-Nw-bh3" firstAttribute="bottom" secondItem="SFG-n1-TFh" secondAttribute="bottom" constant="-14.5" id="7q3-9P-5zI"/>
+                            <constraint firstItem="LTT-Nw-bh3" firstAttribute="top" secondItem="SFG-n1-TFh" secondAttribute="bottom" constant="-60.5" id="FEB-Ti-nOx"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="J5L-CX-fR5" secondAttribute="trailing" constant="233" id="G4F-JQ-Q8V"/>
+                            <constraint firstAttribute="trailing" secondItem="rGh-hR-U8G" secondAttribute="trailing" constant="13" id="KdY-Ts-EKp"/>
+                            <constraint firstItem="rGh-hR-U8G" firstAttribute="top" secondItem="J5L-CX-fR5" secondAttribute="bottom" constant="8" id="Oe2-bB-RbG"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="J5L-CX-fR5" secondAttribute="trailing" constant="233" id="PTN-UN-a1f"/>
+                            <constraint firstItem="rGh-hR-U8G" firstAttribute="centerY" secondItem="J5L-CX-fR5" secondAttribute="centerY" constant="110.5" id="S3t-Lt-Byf"/>
+                            <constraint firstItem="J5L-CX-fR5" firstAttribute="top" secondItem="rGh-hR-U8G" secondAttribute="top" constant="-21" id="TTB-7J-9XW"/>
+                            <constraint firstItem="SFG-n1-TFh" firstAttribute="leading" secondItem="mp3-Ws-Bno" secondAttribute="leading" id="cg3-dM-EnU"/>
+                            <constraint firstItem="LTT-Nw-bh3" firstAttribute="leading" secondItem="mp3-Ws-Bno" secondAttribute="leadingMargin" constant="-3" id="dqw-OU-g99"/>
+                            <constraint firstItem="SFG-n1-TFh" firstAttribute="top" secondItem="SvS-YL-nVh" secondAttribute="bottom" id="nVO-gR-49g"/>
+                            <constraint firstAttribute="trailing" secondItem="SFG-n1-TFh" secondAttribute="trailing" id="rKk-O3-i5Z"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="LTT-Nw-bh3" secondAttribute="trailing" constant="-3" id="xv8-0n-jUr"/>
+                            <constraint firstItem="kJ9-Vu-Ndv" firstAttribute="top" secondItem="rGh-hR-U8G" secondAttribute="bottom" constant="8" id="yuN-6O-pQN"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Episode 12" id="lLj-Km-KBQ">
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="ECl-xO-3N9">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="episodeImageView" destination="SFG-n1-TFh" id="n93-Wd-yEM"/>
+                        <outlet property="imageEpisode" destination="SFG-n1-TFh" id="ht4-A0-wi3"/>
+                        <outlet property="overviewLabel" destination="J5L-CX-fR5" id="9OP-fG-E7v"/>
+                        <outlet property="overviewText" destination="rGh-hR-U8G" id="tyy-8T-pJu"/>
+                        <outlet property="overviewTextView" destination="rGh-hR-U8G" id="L3j-lf-hU6"/>
+                        <outlet property="titleLabel" destination="LTT-Nw-bh3" id="aeX-yo-WdD"/>
+                        <outlet property="titleText" destination="LTT-Nw-bh3" id="pDW-9A-0JJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f6W-9e-06X" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="767" y="369"/>
+        </scene>
+        <!--Custom Navigation Controller-->
+        <scene sceneID="v5l-AA-YJq">
+            <objects>
+                <navigationController id="vQR-8u-Fuu" customClass="CustomNavigationController" customModule="Movile_UP" customModuleProvider="target" sceneMemberID="viewController">
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="BSd-RI-LA1">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="w8b-Fv-94F" kind="relationship" relationship="rootViewController" id="gRo-70-yMw"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ptf-23-CXz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="176" y="369"/>
+        </scene>
+        <!--Season View Controller-->
+        <scene sceneID="wqc-1q-PNM">
+            <objects>
+                <viewController id="w8b-Fv-94F" customClass="SeasonViewController" customModule="Movile_UP" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xtk-Q1-uvW"/>
+                        <viewControllerLayoutGuide type="bottom" id="LAb-Td-3Vv"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2cm-4h-lQy">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="17L-ly-uvY">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="646"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="60" id="FRv-PP-la3">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FRv-PP-la3" id="65p-ec-S73">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oJc-rt-E6R">
+                                                    <rect key="frame" x="16" y="29" width="111" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Box-3O-Lmv">
+                                                    <rect key="frame" x="16" y="8" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="w8b-Fv-94F" id="GKi-oW-CvN"/>
+                                    <outlet property="delegate" destination="w8b-Fv-94F" id="aYv-HR-PCD"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="RDu-HV-Oz6"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="basicTableViewCell" destination="FRv-PP-la3" id="0D3-ZE-ZXY"/>
+                        <outlet property="cellTableView" destination="FRv-PP-la3" id="zgn-i8-sHc"/>
+                        <outlet property="seasonTableView" destination="17L-ly-uvY" id="IWY-K0-UXy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yzB-Hh-OR2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="338" y="1050"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="bg" width="320" height="200"/>
+    </resources>
 </document>
