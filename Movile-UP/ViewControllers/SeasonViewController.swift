@@ -12,6 +12,7 @@ class SeasonViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
     @IBOutlet weak var seasonTableView: UITableView!
 
+
     @IBOutlet weak var basicTableViewCell: UITableViewCell!
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -30,5 +31,6 @@ class SeasonViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
     }
-    
+
 }
+

@@ -170,3 +170,33 @@ extension UITableView {
 //MARK: - CustomNavigationController
 
 //MARK: - SeasonViewController
+
+//MARK: - ShowsViewController
+extension ShowsViewController { 
+
+    enum Reusable: String, Printable, ReusableViewProtocol {
+        case Cell = "Cell"
+
+        var kind: ReusableKind? {
+            switch (self) {
+            case Cell:
+                return ReusableKind(rawValue: "collectionViewCell")
+            default:
+                preconditionFailure("Invalid value")
+                break
+            }
+        }
+
+        var viewType: UIView.Type? {
+            switch (self) {
+            default:
+                return nil
+            }
+        }
+
+        var identifier: String? { return self.description } 
+        var description: String { return self.rawValue }
+    }
+
+}
+

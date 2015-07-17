@@ -7,6 +7,9 @@ use_frameworks!
 
 target 'Movile-UP', :exclusive => true do
     # Add Application pods here
+    pod 'Alamofire'
+    pod 'Result'
+    pod 'TraktModels', :git => 'https://github.com/marcelofabri/TraktModels.git'
     
 end
 
