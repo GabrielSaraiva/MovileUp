@@ -36,6 +36,9 @@ class TraktHTTPClient {
         
         case Show(String)
         case Episode(String,Int,Int)
+        case PopularShows
+        case Seasons(String)
+        case Episodes(String,Int)
         
         // MARK: URLRequestConvertible
             var URLRequest: NSURLRequest {
@@ -45,6 +48,12 @@ class TraktHTTPClient {
                     return ("shows/\(id)", ["extended": "images,full"], .GET)
                 case .Episode(let showId, let season, let episodeNumber):
                     return ("shows/\(showId)/seasons/\(season)/episodes/\(episodeNumber)", ["extended": "images,full"], .GET)
+                case .PopularShows:
+                    return ("shows/popular", ["limit": 50, "extended": "images"], .GET)
+                case .Seasons(let showId):
+                    return("shows/\(showId)/seasons", ["extended": "images,full"], .GET)
+                case .Episodes(let showId, let season):
+                    return("shows/\(showId)/seasons/\(season)", ["extended": "images,full"], .GET)
                 }
                 }()
                 
@@ -58,8 +67,31 @@ class TraktHTTPClient {
             }
                 
     }
+    
+    private func getJSONElement<T: JSONDecodable>(router: Router, completion: ((Result<T, NSError?>) -> Void)?) {
+        
+        manager.request(router).validate().responseJSON { (_, _, responseObject, error)  in
+        
+            if let json = responseObject as? NSDictionary {
+        
+                if let value = T.decode(json) {
+                    completion?(Result.success(value))
+                } else {
+                    completion?(Result.failure(nil))
+                }
+                } else {
+                    completion?(Result.failure(error))
+                }
+        }
+    }
 
     func getShow(id: String, completion: ((Result<Show, NSError?>) -> Void)?) {
+                    
+        getJSONElement(Router.Show(id), completion: completion)
+    
+    }
+    
+    func getShowOld(id: String, completion: ((Result<Show, NSError?>) -> Void)?) {
             
         manager.request(Router.Show(id)).validate().responseJSON { (_, _, responseObject, error) -> Void in
             if let json = responseObject as? NSDictionary {
@@ -78,6 +110,13 @@ class TraktHTTPClient {
     }
     
     func getEpisode(showId: String, season: Int, episodeNumber: Int, completion: ((Result<Episode, NSError?>) -> Void)?) {
+        
+        let router = Router.Episode(showId, season, episodeNumber)
+        getJSONElement(router, completion: completion)
+        
+    }
+    
+    func getEpisodeOld(showId: String, season: Int, episodeNumber: Int, completion: ((Result<Episode, NSError?>) -> Void)?) {
                     
         manager.request(Router.Episode(showId, season, episodeNumber)).validate().responseJSON { (_, _, responseObject, error)  in
             if let json = responseObject as? NSDictionary {
@@ -91,6 +130,58 @@ class TraktHTTPClient {
                     completion?(Result.failure(error))
                 }
             }
+    }
+    
+    func getPopularShows(completion: ((Result<[Show], NSError?>) -> Void)?) {
+                        
+        manager.request(Router.PopularShows).validate().responseJSON { (_,_, responseObject, error) in
+                
+            var result: [Show] = []
+            if let json = responseObject as? NSDictionary {
+                
+                for show in json {
+                    if let show = Show.decode(json) {
+                        result.append(show)
+                    } else {
+                        completion?(Result.failure(nil))
+                    }
+                }
+                
+            } else {
+                completion?(Result.failure(error))
+            }
+            
+            completion?(Result.success(result))
+        }
+    }
+    
+    func getSeasons(showId: String, completion: ((Result<[Season], NSError?>) -> Void)?) {
+    
+        manager.request(Router.Seasons(showId)).validate().responseJSON { (_,_, responseObject, error) in
+                        
+            var result: [Season] = []
+            if let json = responseObject as? NSDictionary {
+                            
+                for show in json {
+                    if let show = Season.decode(json) {
+                        result.append(show)
+                    } else {
+                        completion?(Result.failure(nil))
+                    }
+                }
+                            
+            } else {
+                completion?(Result.failure(error))
+            }
+                        
+            completion?(Result.success(result))
+        }
+                    
+    }
+    
+    func getEpisodes(showId: String, season: Int, completion: ((Result<[Episode], NSError?>) -> Void)?) {
+    
+
     }
     
 }
