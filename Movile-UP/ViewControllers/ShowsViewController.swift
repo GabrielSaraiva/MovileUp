@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Alamofire
+import TraktModels
 
 class ShowsViewController: UICollectionViewController, UICollectionViewDelegate, UICollectionViewDataSource  {
 
@@ -42,5 +44,69 @@ class ShowsViewController: UICollectionViewController, UICollectionViewDelegate,
     
     bottom: flowLayout.sectionInset.bottom, right: space)
     }
+    
+    private let httpClient = TraktHTTPClient()
+    private var shows: [Show]?
+    
+    func loadShows(){
+        httpClient.getPopularShows { [weak self] result in
+            if let shows = result.value {
+                println("conseguiu")
+                self?.shows = shows
+                self?.collectionView?.reloadData()
+            } else {
+                println("oops \(result.error)")
+            }
+        }
+    }
+    
+    
+    private var task: RetrieveImageTask?
+    
+    func loadShow(show: Show) {
+        let placeholder = UIImage(named: "poster")
+        if let url = show.poster?.fullImageURL ?? show.poster?.mediumImageURL ?? show.poster?.thumbImageURL {
+        posterImageView.kf_setImageWithURL(url, placeholderImage: placeholder)
+    } else {
+        posterImageView.image = placeholder
+        }
+        nameLabel.text = show.title
+    }
+    
+    func teste(){
+
+        httpClient.getShow("game-of-thrones") { [weak self] result in
+            println(result.value)
+       }
+        
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        loadShows()
+        teste()
+
+    }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

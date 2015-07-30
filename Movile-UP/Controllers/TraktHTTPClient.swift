@@ -111,8 +111,8 @@ class TraktHTTPClient {
     
     func getEpisode(showId: String, season: Int, episodeNumber: Int, completion: ((Result<Episode, NSError?>) -> Void)?) {
         
-        let router = Router.Episode(showId, season, episodeNumber)
-        getJSONElement(router, completion: completion)
+        //let router = Router.Episode(showId, season, episodeNumber)
+        getJSONElement(Router.Episode(showId, season, episodeNumber), completion: completion)
         
     }
     
@@ -133,7 +133,8 @@ class TraktHTTPClient {
     }
     
     func getPopularShows(completion: ((Result<[Show], NSError?>) -> Void)?) {
-                        
+        
+        getJSONElement(Router.PopularShows, completion: completion)
         manager.request(Router.PopularShows).validate().responseJSON { (_,_, responseObject, error) in
                 
             var result: [Show] = []
@@ -180,7 +181,27 @@ class TraktHTTPClient {
     }
     
     func getEpisodes(showId: String, season: Int, completion: ((Result<[Episode], NSError?>) -> Void)?) {
-    
+
+        manager.request(Router.Episodes(showId, season)).validate().responseJSON { (_,_, responseObject, error) in
+            
+            var result: [Episode] = []
+            if let json = responseObject as? NSDictionary {
+                
+                for show in json {
+                    if let show = Episode.decode(json) {
+                        result.append(show)
+                    } else {
+                        completion?(Result.failure(nil))
+                    }
+                }
+                
+            } else {
+                completion?(Result.failure(error))
+            }
+            
+            completion?(Result.success(result))
+        }
+        
 
     }
     

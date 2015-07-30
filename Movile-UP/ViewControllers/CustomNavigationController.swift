@@ -5,6 +5,8 @@
 //  Created by iOS on 7/15/15.
 //  Copyright (c) 2015 Movile. All rights reserved.
 //
+// git commit -a 
+// git push -u origin master
 
 import UIKit
 
